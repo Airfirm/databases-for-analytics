@@ -226,12 +226,15 @@ Using the World database, write the SQL command to **find cities where the distr
 ```sql
 SELECT ID, Name, CountryCode, District
 FROM city
-WHERE District = '';
+WHERE District IS NULL
+   OR District = '-'
+   OR District = ''
+   OR District LIKE '-%';
 ```
 
 ### Screenshot
 
-![Q10 Screenshot](image-39.png)
+![Q10 Screenshot](image-41.png)
 
 ---
 
@@ -250,9 +253,12 @@ SELECT
     2
   ) AS PercentCitiesMissingDistrict
 FROM city
-WHERE District = '';
+WHERE District IS NULL
+   OR District = '-'
+   OR District = ''
+   OR District LIKE '-%';
 ```
 
 ### Screenshot
 
-![Q11 Screenshot](image-40.png)
+![Q11 Screenshot](image-42.png)
