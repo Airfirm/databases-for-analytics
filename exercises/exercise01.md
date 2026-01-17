@@ -66,7 +66,9 @@ DESCRIBE country;
 Explain why your proposed data type might be better in some situations.
 
 ### Answer
-_Write your explanation here._
+_A good alternative could be YEAR._
+
+_YEAR is purpose-built to store year values and can make the schema more semantically clear (it signals that the value is strictly a year). It can also help reduce invalid inputs (like 123 or 99999) depending on constraints and how your system validates entries. In datasets where the column is always a year and you don’t need full date precision, YEAR can be cleaner and easier to understand._
 
 ---
 
@@ -78,13 +80,13 @@ Write a SQL command to **list the names of all cities in alphabetical order**.
 
 ```sql
 SELECT Name
-FROM city
+FROM country
 ORDER BY Name;
 ```
 
 ### Screenshot
 
-![Q4 Screenshot](screenshots/q4_cities_sorted.png)
+![Q4 Screenshot](image-2.png)
 
 ---
 
