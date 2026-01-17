@@ -27,10 +27,9 @@
 Why were these data types selected?
 
 ### Answer
-country.Population is an INT because population is a whole-number count of people (discrete values). You don’t have “half a person,” so an integer type is appropriate and efficient for storage and comparisons.
+_country.Population is an INT because population is a whole-number count of people (discrete values). You don’t have “half a person,” so an integer type is appropriate and efficient for storage and comparisons.
 
-country.LifeExpectancy is a DECIMAL(3,1) because life expectancy is a measured value that often includes one decimal place (e.g., 78.4 years).
-_Write your explanation here._
+country.LifeExpectancy is a DECIMAL(3,1) because life expectancy is a measured value that often includes one decimal place (e.g., 78.4 years)._
 
 ### Screenshot
 _Show the table structure or DESCRIBE output._
@@ -49,7 +48,7 @@ DESCRIBE country;
 Why do you think this data type was selected?
 
 ### Answer
-_Write your explanation here._
+_This type was selected because independence years are small whole numbers (e.g., 1919, 1975) that fit well within the range of SMALLINT, and it uses less storage than a full INT. It’s also set to allow NULL, which makes sense because some countries/territories may not have an independence year._
 
 ### Screenshot
 
@@ -57,7 +56,7 @@ _Write your explanation here._
 DESCRIBE country;
 ```
 
-![Q2 Screenshot](screenshots/q2_indepyear.png)
+![Q2 Screenshot](image-1.png)
 
 ---
 
