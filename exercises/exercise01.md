@@ -27,10 +27,14 @@
 Why were these data types selected?
 
 ### Answer
+country.Population is an INT because population is a whole-number count of people (discrete values). You don’t have “half a person,” so an integer type is appropriate and efficient for storage and comparisons.
+
+country.LifeExpectancy is a DECIMAL(3,1) because life expectancy is a measured value that often includes one decimal place (e.g., 78.4 years).
 _Write your explanation here._
 
 ### Screenshot
 _Show the table structure or DESCRIBE output._
+![Q1 Screenshot](image.png)
 
 ```sql
 DESCRIBE country;
