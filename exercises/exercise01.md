@@ -80,13 +80,13 @@ Write a SQL command to **list the names of all cities in alphabetical order**.
 
 ```sql
 SELECT Name
-FROM country
+FROM city
 ORDER BY Name;
 ```
 
 ### Screenshot
 
-![Q4 Screenshot](image-3.png)
+![Q4 Screenshot](image-5.png)
 
 ---
 
@@ -104,7 +104,7 @@ ORDER BY GovernmentForm;
 
 ### Screenshot
 
-![Q5 Screenshot](image-4.png)
+![Q5 Screenshot](image-6.png)
 
 ---
 
@@ -122,7 +122,7 @@ WHERE Continent = 'Oceania';
 
 ### Screenshot
 
-![Q6 Screenshot](screenshots/q6_oceania.png)
+![Q6 Screenshot](image-7.png)
 
 ---
 
@@ -139,7 +139,7 @@ FROM city;
 
 ### Screenshot
 
-![Q7 Screenshot](screenshots/q7_city_countrycode.png)
+![Q7 Screenshot](image-8.png)
 
 ---
 
@@ -150,14 +150,18 @@ Write a SQL command to **update the city named `"Nashville-Davidson"` to `"Nashv
 ### SQL
 
 ```sql
+SELECT ID, Name FROM city WHERE Name = 'Nashville-Davidson';
+
 UPDATE city
 SET Name = 'Nashville'
-WHERE Name = 'Nashville-Davidson';
+WHERE ID = 3814;
+
+SELECT ID, Name FROM city WHERE Name = 'Nashville';
 ```
 
 ### Screenshot
 
-![Q8 Screenshot](screenshots/q8_update_city.png)
+![Q8 Screenshot](image-9.png)
 
 ---
 
@@ -171,11 +175,13 @@ Use reasonable values for the remaining columns.
 ```sql
 INSERT INTO country (Code, Name, Continent, Region, Population)
 VALUES ('NAR', 'Narnia', 'Europe', 'Fantasy', 1000000);
+
+SELECT * FROM country WHERE Name = 'Narnia';
 ```
 
 ### Screenshot
 
-![Q9 Screenshot](screenshots/q9_insert_narnia.png)
+![Q9 Screenshot](image-10.png)
 
 ---
 
@@ -188,8 +194,10 @@ Write a SQL command to **delete the country with the country code `"NAR"`**.
 ```sql
 DELETE FROM country
 WHERE Code = 'NAR';
+
+SELECT * FROM country WHERE Code = 'NAR';
 ```
 
 ### Screenshot
 
-![Q10 Screenshot](screenshots/q10_delete_narnia.png)
+![Q10 Screenshot](image-11.png)
