@@ -86,7 +86,7 @@ ORDER BY Name;
 
 ### Screenshot
 
-![Q4 Screenshot](image-2.png)
+![Q4 Screenshot](image-3.png)
 
 ---
 
