@@ -34,6 +34,7 @@ _Write your explanation here._
 
 ### Screenshot
 _Show the table structure or DESCRIBE output._
+
 ![Q1 Screenshot](image.png)
 
 ```sql
