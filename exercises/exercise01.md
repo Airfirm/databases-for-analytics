@@ -38,7 +38,7 @@ _Show the table structure or DESCRIBE output._
 DESCRIBE country;
 ```
 
-![Q1 Screenshot](image-Q1.png)
+![[Q1 Screenshot](<Screenshot 2026-01-17 105430.png>)
 
 ---
 
