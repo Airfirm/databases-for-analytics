@@ -35,13 +35,11 @@ _Write your explanation here._
 ### Screenshot
 _Show the table structure or DESCRIBE output._
 
-![Q1 Screenshot](image.png)
-
 ```sql
 DESCRIBE country;
 ```
 
-![Q1 Screenshot](screenshots/q1_datatypes.png)
+![Q1 Screenshot](image.png)
 
 ---
 
