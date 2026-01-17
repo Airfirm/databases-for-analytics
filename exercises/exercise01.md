@@ -37,8 +37,7 @@ _Show the table structure or DESCRIBE output._
 ```sql
 DESCRIBE country;
 ```
-
-![[Q1 Screenshot](<Screenshot 2026-01-17 105430.png>)
+![Q1 Screenshot](image-22.png)
 
 ---
 
@@ -56,7 +55,7 @@ _This type was selected because independence years are small whole numbers (e.g.
 DESCRIBE country;
 ```
 
-![Q2 Screenshot](image-Q2.png)
+![Q2 Screenshot](screenshots/image-1.png)
 
 ---
 
@@ -86,7 +85,7 @@ ORDER BY Name;
 
 ### Screenshot
 
-![Q4 Screenshot](image-Q4.png)
+![Q4 Screenshot](screenshots/image-5.png)
 
 ---
 
@@ -104,7 +103,7 @@ ORDER BY GovernmentForm;
 
 ### Screenshot
 
-![Q5 Screenshot](image-Q5.png)
+![Q5 Screenshot](screenshots/image-6.png)
 
 ---
 
@@ -122,7 +121,7 @@ WHERE Continent = 'Oceania';
 
 ### Screenshot
 
-![Q6 Screenshot](image-Q6.png)
+![Q6 Screenshot](screenshots/image-7.png)
 
 ---
 
@@ -139,7 +138,7 @@ FROM city;
 
 ### Screenshot
 
-![Q7 Screenshot](image-Q7.png)
+![Q7 Screenshot](screenshots/image-8.png)
 
 ---
 
@@ -161,7 +160,7 @@ SELECT ID, Name FROM city WHERE Name = 'Nashville';
 
 ### Screenshot
 
-![Q8 Screenshot](image-Q8.png)
+![Q8 Screenshot](screenshots/image-9.png)
 
 ---
 
@@ -181,7 +180,7 @@ SELECT * FROM country WHERE Name = 'Narnia';
 
 ### Screenshot
 
-![Q9 Screenshot](image-Q9.png)
+![Q9 Screenshot](screenshots/image-10.png)
 
 ---
 
@@ -200,4 +199,4 @@ SELECT * FROM country WHERE Code = 'NAR';
 
 ### Screenshot
 
-![Q10 Screenshot](image-Q10.png)
+![Q10 Screenshot](image-11.png)
