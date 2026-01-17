@@ -33,7 +33,7 @@ SELECT COUNT(*) AS CityCount
 FROM city;
 ```
 
-![Q1 Screenshot](screenshots/image-12.png)
+![Q1 Screenshot](screenshots/image-Q1.png)
 
 ---
 
@@ -54,7 +54,7 @@ ORDER BY c.Name, cl.Language;
 
 ### Screenshot
 
-![Q2 Screenshot](screenshots/image-13.png)
+![Q2 Screenshot](screenshots/image-Q2.png)
 
 ---
 
@@ -76,7 +76,7 @@ ORDER BY c.Name, cl.Language;
 
 ### Screenshot
 
-![Q3 Screenshot](screenshots/image-14.png)
+![Q3 Screenshot](screenshots/image-Q3.png)
 
 ---
 
@@ -121,7 +121,7 @@ ORDER BY GovernmentForm;
 
 ### Screenshot
 
-![Q5 Screenshot](screenshots/image-15.png)
+![Q5 Screenshot](screenshots/image-Q5.png)
 
 ---
 
@@ -142,7 +142,7 @@ FROM country;
 
 ### Screenshot
 
-![Q6 Screenshot](screenshots/image-16.png)
+![Q6 Screenshot](screenshots/image-Q6.png)
 
 ---
 
@@ -165,7 +165,7 @@ ORDER BY c.Name;
 
 ### Screenshot
 
-![Q7 Screenshot](screenshots/image-17.png)
+![Q7 Screenshot](screenshots/image-Q7.png)
 
 ---
 
@@ -186,7 +186,7 @@ ORDER BY cl.Language;
 
 ### Screenshot
 
-![Q8 Screenshot](screenshots/image-18.png)
+![Q8 Screenshot](screenshots/image-Q8.png)
 
 ---
 
@@ -212,7 +212,7 @@ ORDER BY OfficialLanguageCount DESC, c.Name;
 
 ### Screenshot
 
-![Q9 Screenshot](screenshots/image-19.png)
+![Q9 Screenshot](screenshots/image-Q9.png)
 
 ---
 
@@ -234,7 +234,7 @@ WHERE District IS NULL
 
 ### Screenshot
 
-![Q10 Screenshot](screenshots/image-20.png)
+![Q10 Screenshot](screenshots/image-Q10.png)
 
 ---
 
@@ -258,4 +258,4 @@ WHERE District = '';
 
 ### Screenshot
 
-![Q11 Screenshot](screenshots/image-21.png)
+![Q11 Screenshot](screenshots/image-Q11.png)
