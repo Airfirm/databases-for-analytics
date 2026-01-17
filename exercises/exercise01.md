@@ -54,8 +54,7 @@ _This type was selected because independence years are small whole numbers (e.g.
 ```sql
 DESCRIBE country;
 ```
-
-![Q2 Screenshot](screenshots/image-1.png)
+![Q2 Screenshot](image-23.png)
 
 ---
 
@@ -85,7 +84,7 @@ ORDER BY Name;
 
 ### Screenshot
 
-![Q4 Screenshot](screenshots/image-5.png)
+![Q4 Screenshot](image-24.png)
 
 ---
 
@@ -103,7 +102,7 @@ ORDER BY GovernmentForm;
 
 ### Screenshot
 
-![Q5 Screenshot](screenshots/image-6.png)
+![Q5 Screenshot](image-25.png)
 
 ---
 
@@ -121,7 +120,7 @@ WHERE Continent = 'Oceania';
 
 ### Screenshot
 
-![Q6 Screenshot](screenshots/image-7.png)
+![Q6 Screenshot](image-26.png)
 
 ---
 
@@ -138,7 +137,7 @@ FROM city;
 
 ### Screenshot
 
-![Q7 Screenshot](screenshots/image-8.png)
+![Q7 Screenshot](image-27.png)
 
 ---
 
@@ -160,7 +159,7 @@ SELECT ID, Name FROM city WHERE Name = 'Nashville';
 
 ### Screenshot
 
-![Q8 Screenshot](screenshots/image-9.png)
+![Q8 Screenshot](image-28.png)
 
 ---
 
@@ -180,7 +179,7 @@ SELECT * FROM country WHERE Name = 'Narnia';
 
 ### Screenshot
 
-![Q9 Screenshot](screenshots/image-10.png)
+![Q9 Screenshot](image-29.png)
 
 ---
 
@@ -199,4 +198,4 @@ SELECT * FROM country WHERE Code = 'NAR';
 
 ### Screenshot
 
-![Q10 Screenshot](image-11.png)
+![Q10 Screenshot](image-30.png)

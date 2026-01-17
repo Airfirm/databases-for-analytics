@@ -32,8 +32,7 @@ _Show evidence of how you determined this (for example, a COUNT query)._
 SELECT COUNT(*) AS CityCount
 FROM city;
 ```
-
-![Q1 Screenshot](screenshots/image-12.png)
+![Q1 Screenshot](image-31.png)
 
 ---
 
@@ -54,7 +53,7 @@ ORDER BY c.Name, cl.Language;
 
 ### Screenshot
 
-![Q2 Screenshot](screenshots/image-13.png)
+![Q2 Screenshot](image-32.png)
 
 ---
 
@@ -76,7 +75,7 @@ ORDER BY c.Name, cl.Language;
 
 ### Screenshot
 
-![Q3 Screenshot](screenshots/image-14.png)
+![Q3 Screenshot](image-33.png)
 
 ---
 
@@ -121,7 +120,7 @@ ORDER BY GovernmentForm;
 
 ### Screenshot
 
-![Q5 Screenshot](screenshots/image-15.png)
+![Q5 Screenshot](image-34.png)
 
 ---
 
@@ -142,7 +141,7 @@ FROM country;
 
 ### Screenshot
 
-![Q6 Screenshot](screenshots/image-16.png)
+![Q6 Screenshot](image-35.png)
 
 ---
 
@@ -165,7 +164,7 @@ ORDER BY c.Name;
 
 ### Screenshot
 
-![Q7 Screenshot](screenshots/image-17.png)
+![Q7 Screenshot](image-36.png)
 
 ---
 
@@ -186,7 +185,7 @@ ORDER BY cl.Language;
 
 ### Screenshot
 
-![Q8 Screenshot](image-18.png)
+![Q8 Screenshot](image-37.png)
 
 ---
 
@@ -212,7 +211,7 @@ ORDER BY OfficialLanguageCount DESC, c.Name;
 
 ### Screenshot
 
-![Q9 Screenshot](screenshots/image-19.png)
+![Q9 Screenshot](image-38.png)
 
 ---
 
@@ -227,14 +226,12 @@ Using the World database, write the SQL command to **find cities where the distr
 ```sql
 SELECT ID, Name, CountryCode, District
 FROM city
-WHERE District IS NULL
-   OR District = ''
-   OR District LIKE '-%';
+WHERE District = '';
 ```
 
 ### Screenshot
 
-![Q10 Screenshot](screenshots/image-20.png)
+![Q10 Screenshot](image-39.png)
 
 ---
 
@@ -258,4 +255,4 @@ WHERE District = '';
 
 ### Screenshot
 
-![Q11 Screenshot](screenshots/image-21.png)
+![Q11 Screenshot](image-40.png)
