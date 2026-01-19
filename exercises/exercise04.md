@@ -31,6 +31,36 @@ Considering the World database, write a SQL statement that will **display the na
 ### SQL
 
 ```sql
+from sqlalchemy import text
+from sqlalchemy import text
+
+with engine.connect() as conn:
+    result = conn.execute(
+        text("""
+            SELECT
+                c.name AS country_name,
+                COUNT(cl.language) AS official_language_count
+            FROM country c
+            JOIN countrylanguage cl
+                ON c.code = cl.countrycode
+            WHERE cl.isofficial = 'T'
+            GROUP BY c.name
+            HAVING COUNT(cl.language) > 2
+            ORDER BY official_language_count DESC;
+        """)
+    )
+    ##rows_q1 = result.fetchall()
+    rows_q1 = result.mappings().all()
+
+rows_q1[0]["country_name"]
+rows_q1[0]["official_language_count"]
+
+#rows_q1
+for row in rows_q1:
+    print(f"{row['country_name']}: {row['official_language_count']}")
+
+OR
+
 query = """
 SELECT
     c.name AS country_name,
@@ -51,7 +81,8 @@ df_languages
 ### Screenshot
 
 ![Q1 Screenshot](screenshots/q1_official_language_counts.png)
-![Q1 Screenshot](image-63.png)
+![Q1 Screenshot](image-65.png)
+![Q1 Screenshot](image-66.png)
 
 ---
 
@@ -62,6 +93,19 @@ Using **Jupyter Notebooks**, you must use the `create_engine` command to connect
 After the `create_engine` command is executed, **what are the three statements required to execute the query from Question 1 and display the results in the notebook**?
 
 ### Required Steps are:
+_`from sqlalchemy import text` In SQLAlchemy 2.x, raw SQL must be wrapped in text() before execution. Without this, SQLAlchemy may raise an error or treat the string incorrectly._
+_`with engine.connect() as conn:`_
+    _engine = your database configuration (host, DB name, credentials)_
+    _connect() opens a database connection_
+    _with ... as ... is a context manager_
+_`conn.execute(...)` 
+    _conn.execute() sends the SQL to PostgreSQL_
+    _text("SELECT ...") is the SQL statement_
+    _The database executes the query_
+    _The returned object (result) is a Result object, not the data yet_
+_`rows = result.fetchall()` fetchall() retrieves all rows returned by the query_
+_`rows` Displays its contents automatically. This is why you don’t need print(rows)._
+
 _Define the SQL query `query = """<your SQL query here>"""`._
 _Execute the SQL query using pandas `df = pd.read_sql(query, engine)`._
 _Display the results `df`._
