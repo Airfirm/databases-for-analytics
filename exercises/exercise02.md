@@ -32,7 +32,8 @@ _Show evidence of how you determined this (for example, a COUNT query)._
 SELECT COUNT(*) AS CityCount
 FROM city;
 ```
-![Q1 Screenshot](image-31.png)
+<!-- ![Q1 Screenshot](image-31.png) -->
+![Q1 Screenshot](image-51.png)
 
 ---
 
@@ -53,7 +54,8 @@ ORDER BY c.Name, cl.Language;
 
 ### Screenshot
 
-![Q2 Screenshot](image-32.png)
+<!-- ![Q2 Screenshot](image-32.png) -->
+![Q2 Screenshot](image-52.png)
 
 ---
 
@@ -75,7 +77,8 @@ ORDER BY c.Name, cl.Language;
 
 ### Screenshot
 
-![Q3 Screenshot](image-33.png)
+<!-- ![Q3 Screenshot](image-33.png) -->
+![Q3 Screenshot](image-53.png)
 
 ---
 
@@ -120,7 +123,8 @@ ORDER BY GovernmentForm;
 
 ### Screenshot
 
-![Q5 Screenshot](image-34.png)
+<!-- ![Q5 Screenshot](image-34.png) -->
+![Q5 Screenshot](image-54.png)
 
 ---
 
@@ -132,16 +136,17 @@ Label the column **"City or Country Name"**.
 ### SQL
 
 ```sql
-SELECT Name AS `City or Country Name`
+SELECT Name AS "City or Country Name"
 FROM city
 UNION
-SELECT Name AS `City or Country Name`
+SELECT Name AS "City or Country Name"
 FROM country;
 ```
 
 ### Screenshot
 
-![Q6 Screenshot](image-35.png)
+<!-- ![Q6 Screenshot](image-35.png) -->
+![Q6 Screenshot](image-55.png)
 
 ---
 
@@ -164,7 +169,8 @@ ORDER BY c.Name;
 
 ### Screenshot
 
-![Q7 Screenshot](image-36.png)
+<!-- ![Q7 Screenshot](image-36.png) -->
+![Q7 Screenshot](image-56.png)
 
 ---
 
@@ -185,7 +191,8 @@ ORDER BY cl.Language;
 
 ### Screenshot
 
-![Q8 Screenshot](image-37.png)
+<!-- ![Q8 Screenshot](image-37.png) -->
+![Q8 Screenshot](image-57.png)
 
 ---
 
@@ -211,7 +218,8 @@ ORDER BY OfficialLanguageCount DESC, c.Name;
 
 ### Screenshot
 
-![Q9 Screenshot](image-38.png)
+<!-- ![Q9 Screenshot](image-38.png) -->
+![Q9 Screenshot](image-58.png)
 
 ---
 
@@ -234,7 +242,8 @@ WHERE District IS NULL
 
 ### Screenshot
 
-![Q10 Screenshot](image-41.png)
+<!-- ![Q10 Screenshot](image-41.png) -->
+![Q10 Screenshot](image-59.png)
 
 ---
 
@@ -261,4 +270,5 @@ WHERE District IS NULL
 
 ### Screenshot
 
-![Q11 Screenshot](image-42.png)
+<!-- ![Q11 Screenshot](image-42.png) -->
+![Q11 Screenshot](image-60.png)
