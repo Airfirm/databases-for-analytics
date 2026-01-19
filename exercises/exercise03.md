@@ -24,7 +24,8 @@
 When importing the documents from `restaurants-json.json`, **how many documents were imported into your collection**?
 
 ### Answer
-_25358 number of documents were imported._
+
+_`25358` number of documents were imported._
 
 ### Screenshot
 _Show evidence of how you determined this (for example, a count query)._
@@ -75,7 +76,8 @@ db.restaurants.find({ borough: "Queens" })
 ## Question 4
 
 Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **find the number of restaurants in the `"Queens"` borough**.
-_Number of restaurants in the `"Queens"` borough is 5656._
+
+_Number of restaurants in the `"Queens"` borough is `5656`._
 
 ### MongoDB Query
 
@@ -93,7 +95,8 @@ db.restaurants.countDocuments({ borough: "Queens" })
 ## Question 5
 
 Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **find the number of restaurants in the `"Queens"` borough whose cuisine is `"Hamburgers"`**.
-_Number of restaurants in the `"Queens"` borough whose cuisine is `"Hamburgers"` is 104._
+
+_Number of restaurants in the `"Queens"` borough whose cuisine is `"Hamburgers"` is `104`._
 
 ### MongoDB Query
 
@@ -111,7 +114,8 @@ db.restaurants.countDocuments({ borough: "Queens", cuisine: "Hamburgers" })
 ## Question 6
 
 Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **find the number of restaurants in Zipcode `10460`**.
-_Number of restaurants in Zipcode `10460` is 68._
+
+_Number of restaurants in Zipcode `10460` is `68`._
 
 *Hint: Look up how to query **embedded documents**.*
 
