@@ -32,7 +32,6 @@ Considering the World database, write a SQL statement that will **display the na
 
 ```sql
 from sqlalchemy import text
-from sqlalchemy import text
 
 with engine.connect() as conn:
     result = conn.execute(
@@ -94,20 +93,27 @@ After the `create_engine` command is executed, **what are the three statements r
 
 ### Required Steps are:
 _`from sqlalchemy import text` In SQLAlchemy 2.x, raw SQL must be wrapped in text() before execution. Without this, SQLAlchemy may raise an error or treat the string incorrectly._
+
 _`with engine.connect() as conn:`_
+
     _engine = your database configuration (host, DB name, credentials)_
     _connect() opens a database connection_
     _with ... as ... is a context manager_
+
 _`conn.execute(...)` 
     _conn.execute() sends the SQL to PostgreSQL_
     _text("SELECT ...") is the SQL statement_
     _The database executes the query_
     _The returned object (result) is a Result object, not the data yet_
+
 _`rows = result.fetchall()` fetchall() retrieves all rows returned by the query_
+
 _`rows` Displays its contents automatically. This is why you don’t need print(rows)._
 
 _Define the SQL query `query = """<your SQL query here>"""`._
+
 _Execute the SQL query using pandas `df = pd.read_sql(query, engine)`._
+
 _Display the results `df`._
 
 ### Python Code
