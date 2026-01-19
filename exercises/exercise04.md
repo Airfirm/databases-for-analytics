@@ -31,12 +31,27 @@ Considering the World database, write a SQL statement that will **display the na
 ### SQL
 
 ```sql
--- Your SQL here
+query = """
+SELECT
+    c.name AS country_name,
+    COUNT(cl.language) AS official_language_count
+FROM country c
+JOIN countrylanguage cl
+    ON c.code = cl.countrycode
+WHERE cl.isofficial = 'T'
+GROUP BY c.name
+HAVING COUNT(cl.language) > 2
+ORDER BY official_language_count DESC;
+"""
+
+df_languages = pd.read_sql(query, engine)
+df_languages
 ```
 
 ### Screenshot
 
 ![Q1 Screenshot](screenshots/q1_official_language_counts.png)
+![Q1 Screenshot](image-63.png)
 
 ---
 
@@ -46,15 +61,37 @@ Using **Jupyter Notebooks**, you must use the `create_engine` command to connect
 
 After the `create_engine` command is executed, **what are the three statements required to execute the query from Question 1 and display the results in the notebook**?
 
+### Required Steps are:
+_Define the SQL query `query = """<your SQL query here>"""`._
+_Execute the SQL query using pandas `df = pd.read_sql(query, engine)`._
+_Display the results `df`._
+
 ### Python Code
 
 ```python
-# Your three Python statements here
+from sqlalchemy import text
+
+with engine.connect() as conn:
+    result = conn.execute(text("SELECT * FROM country LIMIT 10;"))
+    rows = result.fetchall()
+
+rows
+
+OR
+
+df = pd.read_sql(
+    "SELECT * FROM country LIMIT 10;",
+    engine
+)
+
+df
 ```
 
 ### Screenshot
 
 ![Q2 Screenshot](screenshots/q2_jupyter_query_results.png)
+![Q2 Screenshot](image-61.png)
+![Q2 Screenshot](image-62.png)
 
 ---
 
@@ -69,9 +106,25 @@ Using **Jupyter Notebooks**, write the Python code needed to produce the followi
 ### Python Code
 
 ```python
-# Your Python code here
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 6))
+
+plt.bar(
+    df_languages["country_name"],
+    df_languages["official_language_count"]
+)
+
+plt.xlabel("Country")
+plt.ylabel("Number of Official Languages")
+plt.title("Countries with More Than Two Official Languages")
+
+plt.xticks(rotation=45, ha="right")
+plt.tight_layout()
+plt.show()
 ```
 
 ### Screenshot
 
 ![Q3 Screenshot](screenshots/q3_countries_graph.png)
+![Q3 Screenshot](image-64.png)
