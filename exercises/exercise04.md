@@ -58,7 +58,7 @@ rows_q1[0]["official_language_count"]
 for row in rows_q1:
     print(f"{row['country_name']}: {row['official_language_count']}")
 
-OR
+<\-- OR -->
 
 query = """
 SELECT
@@ -127,7 +127,7 @@ with engine.connect() as conn:
 
 rows
 
-OR
+##OR
 
 df = pd.read_sql(
     "SELECT * FROM country LIMIT 10;",
