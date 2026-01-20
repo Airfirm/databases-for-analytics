@@ -1,9 +1,11 @@
 # Module 6 - Exercise 1: Creating a Data Warehouse
 From the Operational Model to the Dimensional Model
 
-- Name:
+- Name: Oluwafemi Salawu
 - Course: Database for Analytics
 - Module: 6
+- Database Used:
+- Tools Used:
 
 ---
 
