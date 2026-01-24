@@ -42,12 +42,17 @@ year
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT DISTINCT
+    EXTRACT(YEAR FROM sent_date) AS year
+FROM emails
+WHERE sent_date IS NOT NULL
+ORDER BY year;
 ```
 
 ### Screenshot
 
 ![Q1 Screenshot](screenshots/q1_email_years.png)
+![Q1 Screenshot](image-76.png)
 
 ---
 
@@ -65,12 +70,19 @@ count   year
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    COUNT(*) AS count,
+    EXTRACT(YEAR FROM sent_date) AS year
+FROM emails
+WHERE sent_date IS NOT NULL
+GROUP BY year
+ORDER BY year;
 ```
 
 ### Screenshot
 
 ![Q2 Screenshot](screenshots/q2_message_count_by_year.png)
+![Q2 Screenshot](image-77.png)
 
 ---
 
@@ -86,12 +98,19 @@ Only include emails that contain **both** a sent date and an opened date.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    sent_date,
+    opened_date,
+    opened_date - sent_date AS interval
+FROM emails
+WHERE sent_date IS NOT NULL
+  AND opened_date IS NOT NULL;
 ```
 
 ### Screenshot
 
 ![Q3 Screenshot](screenshots/q3_sent_opened_interval.png)
+![Q3 Screenshot](image-78.png)
 
 ---
 
@@ -102,12 +121,20 @@ Using the `sqlda` database, write the SQL needed to show emails that contain an 
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT 
+     email_subject,
+	 opened_date,
+	 sent_date
+FROM emails
+WHERE opened_date IS NOT NULL
+  AND sent_date IS NOT NULL
+  AND opened_date < sent_date;
 ```
 
 ### Screenshot
 
 ![Q4 Screenshot](screenshots/q4_opened_before_sent.png)
+![Q4 Screenshot](image-79.png)
 
 ---
 
@@ -119,11 +146,20 @@ After looking at the data, **why is this the case?**
 
 ### Answer
 
-_Write your explanation here._
+_This occurs because the opened_date is likely generated from user interaction data or logs that were backfilled or timestamped inconsistently. In many real-world systems:_
+
+_Email open tracking can be delayed_
+
+_Data can be imported from multiple systems_
+
+_Time zones or batch processing can cause timestamps to appear out of order_
+
+_This is a data quality issue, not a logical impossibility — and it’s common in real analytics datasets._
 
 ### Screenshot (if requested by instructor)
 
 ![Q5 Screenshot](screenshots/q5_explain_date_issue.png)
+![Q5 Screenshot](image-80.png)
 
 ---
 
@@ -159,8 +195,20 @@ CREATE TEMP TABLE customer_dealership_distance AS (
 ```
 
 ### Answer
+`First Query`
+_Creates a temporary table of customers with valid coordinates_
 
-_Write your explanation here._
+_Stores longitude/latitude as a geometric point_
+
+`Second Query`
+_Creates a temp table of dealership locations as points_
+
+`Third Query`
+_Uses a CROSS JOIN to compare every customer to every dealership_
+
+_<@> calculates distance between two points_
+
+_Produces a table of customer–dealership distances_
 
 ---
 
@@ -177,12 +225,18 @@ For example - dealership 1 is below:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    dealership_id,
+    ARRAY_AGG(last_name || ',' || first_name ORDER BY last_name, first_name) AS salespeople
+FROM salespeople
+GROUP BY dealership_id
+ORDER BY dealership_id;
 ```
 
 ### Screenshot
 
 ![Q7 Screenshot](screenshots/q7_salespeople_array_by_dealership.png)
+![Q7 Screenshot](image-81.png)
 
 ---
 
@@ -202,12 +256,22 @@ Reference image:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    d.dealership_id,
+    d.state,
+    ARRAY_AGG(s.last_name || ',' || s.first_name ORDER BY s.last_name, s.first_name) AS salespeople,
+    COUNT(s.salesperson_id) AS salesperson_count
+FROM dealerships d
+JOIN salespeople s
+  ON d.dealership_id = s.dealership_id
+GROUP BY d.dealership_id, d.state
+ORDER BY d.state;
 ```
 
 ### Screenshot
 
 ![Q8 Screenshot](screenshots/q8_salespeople_array_state_count.png)
+![Q8 Screenshot](image-82.png)
 
 ---
 
@@ -218,12 +282,14 @@ Using the `sqlda` database, write the SQL needed to convert the **customers** ta
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT json_agg(row_to_json(c))
+FROM customers c;
 ```
 
 ### Screenshot
 
 ![Q9 Screenshot](screenshots/q9_customers_to_json.png)
+![Q9 Screenshot](image-83.png)
 
 ---
 
@@ -244,9 +310,22 @@ Reference image:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT json_agg(row_to_json(t))
+FROM (
+    SELECT
+        d.dealership_id,
+        d.state,
+        ARRAY_AGG(s.last_name || ',' || s.first_name ORDER BY s.last_name, first_name) AS salespeople,
+        COUNT(s.salesperson_id) AS salesperson_count
+    FROM dealerships d
+    JOIN salespeople s
+      ON d.dealership_id = s.dealership_id
+    GROUP BY d.dealership_id, d.state
+    ORDER BY d.state
+) t;
 ```
 
 ### Screenshot
 
 ![Q10 Screenshot](screenshots/q10_salespeople_array_to_json.png)
+![Q10 Screenshot](image-84.png)
