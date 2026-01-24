@@ -196,14 +196,17 @@ CREATE TEMP TABLE customer_dealership_distance AS (
 
 ### Answer
 `First Query`
+
 _Creates a temporary table of customers with valid coordinates_
 
 _Stores longitude/latitude as a geometric point_
 
 `Second Query`
+
 _Creates a temp table of dealership locations as points_
 
 `Third Query`
+
 _Uses a CROSS JOIN to compare every customer to every dealership_
 
 _<@> calculates distance between two points_
@@ -271,6 +274,7 @@ ORDER BY d.state;
 ### Screenshot
 
 ![Q8 Screenshot](screenshots/q8_salespeople_array_state_count.png)
+![Q8 Screenshot](image-85.png)
 ![Q8 Screenshot](image-82.png)
 
 ---
@@ -328,4 +332,4 @@ FROM (
 ### Screenshot
 
 ![Q10 Screenshot](screenshots/q10_salespeople_array_to_json.png)
-![Q10 Screenshot](image-84.png)
+![Q10 Screenshot](image-86.png)
