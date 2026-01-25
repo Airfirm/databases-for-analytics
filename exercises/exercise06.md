@@ -5,7 +5,7 @@ From the Operational Model to the Dimensional Model
 - Course: Database for Analytics
 - Module: 6
 - Database Used: Sales_Database
-- Tools Used: MySQL
+- Tools Used: MySQL, Excel
 
 ---
 
