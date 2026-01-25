@@ -4,8 +4,8 @@ From the Operational Model to the Dimensional Model
 - Name: Oluwafemi Salawu
 - Course: Database for Analytics
 - Module: 6
-- Database Used:
-- Tools Used:
+- Database Used: Sales_Database
+- Tools Used: MySQL
 
 ---
 
@@ -110,6 +110,7 @@ Save your diagram image in this repo and embed it below.
 #### Diagram
 
 ![Star Schema Diagram](star-schema.png)
+![Star Schema Diagram](customer_sales_star_schema.png)
 
 ---
 
@@ -123,4 +124,6 @@ In 1-2 short paragraphs, explain:
 
 #### Design Notes
 
-_Write your design notes here._
+_I chose three dimensions for the data warehouse: **Date**, **Customer**, and **Part**. The Date dimension allows analysis across days, months, quarters, and years, which is required for time-based questions such as monthly and quarterly averages. The Customer dimension supports customer-level and location-based analysis, including questions about individual customers and revenue by zip code. The Part dimension enables analysis by part number and product category, such as tracking sales of part ax12 or appliance items. These dimensions were selected because they directly align with the business questions and exclude unnecessary operational details like orders, sales representatives, and inventory.
+
+The **fact table** is designed at a daily sales grain, meaning each row represents total quantity and total sales amount for a given customer, part, and day. This grain was chosen because all required analytics are based on daily, monthly, quarterly, or yearly totals and averages, not individual orders. With this design, the warehouse can easily answer questions such as how many units of part ax12 were sold on a specific date, how much a customer spent over a year, and the average daily sales during a given quarter. By aggregating data before loading it into the fact table, the model remains simple, efficient, and focused only on the analytics that matter._
