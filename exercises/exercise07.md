@@ -60,13 +60,13 @@ Each file:
 
 ### Tables Loaded
 
-| Table         | Columns | Approx Row Count |
-| ------------- | ------- | ---------------- |
-| name_basics   | 6       | Millions         |
-| title_basics  | 9       | Millions         |
-| title_crew    | 3       | Millions         |
-| title_episode | 4       | Millions         |
-| title_ratings | 3       | Millions         |
+| Table          | Columns | Row Count        |
+|----------------|---------|------------------|
+| name_basics    | 6       | 15,053,659       |
+| title_basics   | 9       | 12,256,479       |
+| title_crew     | 3       | 12,258,771       |
+| title_episode  | 4       | 9,458,778        |
+| title_ratings  | 3       | 1,630,292        |
 
 The data was loaded using Pandas ETL and inserted into PostgreSQL.
 
