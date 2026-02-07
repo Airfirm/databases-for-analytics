@@ -21,10 +21,6 @@ I used a Jupyter Notebook in VS Code with Pandas and SQLAlchemy to load the IMDb
 - This is how ETL pipelines are often built in practice
 
 
-Below is a **ready-to-paste Markdown (.md) response** formatted for Visual Studio Code.
-
-You can drop this directly into your assignment file.
-
 ---
 
 # IMDb Data Engineering Project
@@ -250,35 +246,35 @@ WHERE table_name = 'title_ratings';
 ### name_basics
 
 ```sql
-SELECT * FROM name_basics LIMIT 10;
+SELECT * FROM name_basics;
 ```
 ![name_basics](image-92.png)
 
 ### title_basics
 
 ```sql
-SELECT * FROM title_basics LIMIT 10;
+SELECT * FROM title_basics;
 ```
 ![title_basics](image-93.png)
 
 ### title_crew
 
 ```sql
-SELECT * FROM title_crew LIMIT 10;
+SELECT * FROM title_crew;
 ```
 ![title_crew](image-94.png)
 
 ### title_episode
 
 ```sql
-SELECT * FROM title_episode LIMIT 10;
+SELECT * FROM title_episode;
 ```
 ![title_episode](image-95.png)
 
 ### title_ratings
 
 ```sql
-SELECT * FROM title_ratings LIMIT 10;
+SELECT * FROM title_ratings;
 ```
 ![title_ratings](image-96.png)
 
