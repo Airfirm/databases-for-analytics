@@ -193,3 +193,35 @@ WHY: Support correct citation and attribution.
 <!--
 WHY: Provide terms of reuse and limits of liability.
 -->
+
+---
+
+{
+  "categories": [
+    "movie"
+  ],
+  "created_at": "2020-01-05 13:42:19.324003",
+  "icon_url": "https://api.chucknorris.io/img/avatar/chuck-norris.png",
+  "id": "pn_y-heotimuyfatmsvzng",
+  "updated_at": "2020-01-05 13:42:19.324003",
+  "url": "https://api.chucknorris.io/jokes/pn_y-heotimuyfatmsvzng",
+  "value": "When Bruce Banner gets mad, he turns into the Hulk. When the Hulk gets mad, he turns into Chuck Norris."
+}
+
+{
+  "categories": [
+    "dev"
+  ],
+  "created_at": "2020-01-05 13:42:19.324003",
+  "icon_url": "https://api.chucknorris.io/img/avatar/chuck-norris.png",
+  "id": "1jgggc4rruety6zvlvb5ag",
+  "updated_at": "2020-01-05 13:42:19.324003",
+  "url": "https://api.chucknorris.io/jokes/1jgggc4rruety6zvlvb5ag",
+  "value": "Google won't search for Chuck Norris because it knows you don't find Chuck Norris, he finds you."
+}
+
+git add .
+git commit -m "Add .gitignore and requirements.txt files"
+git push -u origin main
+
+---
