@@ -338,6 +338,29 @@ LIMIT 10;
 
 ---
 
+### Reflection
+
+**Which was the most difficult:**  
+The most difficult part of the project was loading and transforming the large IMDb datasets into PostgreSQL tables, especially the `name_basics` and `title_basics` tables due to their size (millions of rows). Handling schema mismatches and ensuring the column names in Python matched the PostgreSQL table structures also required careful debugging.
+
+**What challenges did you encounter:**  
+- Column name mismatches between the TSV files and the database tables (for example, using `name_id` instead of `nconst`).  
+- Data type issues when converting raw TSV text values into integers and numerics.  
+- Managing very large files that could not be inserted all at once without performance problems.  
+- Errors related to missing variables (such as the SQLAlchemy `engine` not being defined).  
+- Cleaning missing values such as `\N` and converting them to NULL before loading.  
+- Ensuring consistent naming conventions across tables (underscores vs. original column names).  
+
+**How did you address the challenges:**  
+- Carefully reviewed the table schema using `information_schema.columns` to make sure column names matched exactly before inserting data.  
+- Updated Python scripts to rename columns from the source files to match the database structure.  
+- Replaced missing values (`\N`) with NULL and converted numeric fields to proper integer/float types before loading.  
+- Used chunked inserts (`chunksize=10000`) in pandas to improve performance and avoid memory issues.  
+- Re-created the database connection (`engine`) when errors occurred and kept setup code at the top of the notebook.  
+- Tested inserts with small samples first before loading full datasets to catch errors early.
+
+---
+
 ## Summary
 
 This project demonstrates:
